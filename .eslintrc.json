@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "plugin:react/recommended"],
+  "plugins": ["react", "prettier"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "comma-dangle": [2, "never"],
+    "func-names": 0,
+    "no-param-reassign": 0,
+    "no-multi-str": 0,
+    "consistent-return": 0,
+    "semi": ["error", "never", { "omitLastInOneLineBlock": true}]
+  }
 }
