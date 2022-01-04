@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Button, CardActions, CardContent, TextField } from "@mui/material"
 import { DetailsContent } from "./styles"
 

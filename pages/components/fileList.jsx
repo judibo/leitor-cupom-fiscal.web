@@ -3,18 +3,17 @@ import { Delete } from "@material-ui/icons"
 import { ListItem, ListItemInfo, ListItemDetail, FileListContainer } from "./styles"
 import filesize from "filesize"
 
-const FileList = ({ files }) => {
+const FileList = ({ image }) => {
   return (
     <FileListContainer>
-      {files.map((file) => (
-        <ListItem key={file}>
+      {image &&
+        <ListItem key={image}>
           <ListItemInfo>
-            <p>{file.name}</p>
-            <Delete onClick={() => console.log("Deletar arquivo")}/>
+            <p>{image.name}</p>
           </ListItemInfo>
-          <ListItemDetail>{filesize(file.size)}</ListItemDetail>
+          <ListItemDetail>{filesize(image.size)}</ListItemDetail>
         </ListItem>
-      ))}
+      } 
     </FileListContainer>
   )
 }

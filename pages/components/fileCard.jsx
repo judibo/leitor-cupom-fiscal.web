@@ -2,13 +2,18 @@ import React, { useState } from "react"
 import FileUploader from "./fileUploader"
 import FileList from "./fileList"
 import { CardContent } from "@mui/material"
+import fileService from "../../services/fileService"
 
 const FileCard = ({ setInfoCupom }) => {
-  const [files, setFiles] = useState([])
+  const [files, setFiles] = useState()
+  const [image, setImage] = useState('')
 
-  const onUpload = (files) => {
+  const onUpload = (base64, file) => {
     setInfoCupom(files)
-    setFiles(files)
+    setFiles(base64)
+    setImage(file)
+
+    fileService.addFile(files).then(response => response)
   }
 
   return (
@@ -19,7 +24,7 @@ const FileCard = ({ setInfoCupom }) => {
         onFileSelectError={({ error }) => alert(error)}
         onUpload={onUpload}
       />
-      <FileList files={files} />
+      <FileList image={image}/>
     </CardContent>
   )
 }

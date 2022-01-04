@@ -6,7 +6,12 @@ import { Fab } from "@mui/material"
 
 const FileUploader = ({ onUpload }) => {
   const onDrop = useCallback((acceptedFiles) => {
-    onUpload(acceptedFiles)
+    var file = acceptedFiles[0]
+    const reader = new FileReader()
+    reader.onload = (event) => {
+      onUpload(event.target.result, file)
+    }
+    reader.readAsDataURL(file)
   }, [])
 
   const {
