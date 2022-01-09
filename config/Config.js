@@ -1,5 +1,5 @@
 const environment = {
-  urlFileReader: 'http://localhost:4000', // alterar URL
+  urlFileReader: 'http://localhost:8080/ler-recibo',
 }
 
 export default environment

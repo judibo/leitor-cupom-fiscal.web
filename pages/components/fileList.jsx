@@ -1,5 +1,4 @@
 import React from "react"
-import { Delete } from "@material-ui/icons"
 import { ListItem, ListItemInfo, ListItemDetail, FileListContainer } from "./styles"
 import filesize from "filesize"
 
