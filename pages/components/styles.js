@@ -56,6 +56,12 @@ export const ListItemInfo = styled.p`
 export const ListItemDetail = styled.p`
   font-size: 10px;
 `
+export const DetailsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: '1px solid #d6ebee'
+`
 export const DetailsContent = styled.div`
   display: flex;
   flex-direction: column;

@@ -9,15 +9,14 @@ const FileCard = ({ setInfoCupom }) => {
 	const [image, setImage] = useState('')
 
 	const onUpload = (base64, file) => {
-    setFile(base64)
+		setFile(base64)
 		setImage(file)
-    
+
 		fileService
-    .addFile({
-      imagemBase64: base64.replace('data:image/png;base64,', '')
-    })
-    .then((response) => setInfoCupom(response))
-    
+			.addFile({
+				imagemBase64: base64.replace('data:image/png;base64,', '')
+			})
+			.then((response) => setInfoCupom(response))
 	}
 
 	return (

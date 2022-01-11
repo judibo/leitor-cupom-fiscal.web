@@ -4,9 +4,7 @@ import environment from '../config/Config'
 async function addFile(file) {
 	const fileSent = await axios
 		.post(`${environment.urlFileReader}`, file)
-		.then(function (response) {
-			console.log(response)
-		})
+		.then(response => response.data)
 		.catch(function (error) {
 			console.log(error)
 		})
